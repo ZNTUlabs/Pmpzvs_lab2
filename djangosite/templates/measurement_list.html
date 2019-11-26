@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">   
+<head>
+    <link  href = "{% static '/css/style.css' %}" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Виміри</title>
+</head>
+<body>
+    <div class="header">
+      <!--<h1>Виміри</h1>-->
+      <a href="{% url 'measurement_list' %}">Виміри</a>
+      <a href="{% url 'create_measurement' %}">Додати вимір</a>
+    </div>
+
+    <div class="body_m">
+        {% for measurement in measurements %}
+             <p>{{ measurement.value }}</p>
+         {% endfor %}
+    </div>
+          
+</body>
+</html>

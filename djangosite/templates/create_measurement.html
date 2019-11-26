@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <link  href = "{% static '/css/style.css' %}" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Додати вимір</title>
+</head>
+<body>
+    <div class="header">
+        <!--<h1>Виміри</h1>-->
+        <a href="{% url 'measurement_list' %}">Виміри</a>
+        <a href="{% url 'create_measurement' %}">Додати вимір</a>
+    </div>
+
+    <div class="form_m"></div>
+         <form action="{% url 'create_measurement' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input id="submit" type="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+</html>
