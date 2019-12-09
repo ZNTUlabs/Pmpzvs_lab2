@@ -14,7 +14,7 @@ class MeasurementList(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         try:
-            file_path = os.path.join(settings.BASE_DIR, 'test_data.txt')
+            file_path = os.path.join(settings.BASE_DIR, 'measurement/mesurement.log')
             measurement_file = open(file_path, 'r')
             for value in measurement_file:
                 Measurement.objects.get_or_create(value=value)
